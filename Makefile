@@ -1,11 +1,11 @@
 #================================================================================
  
-CC = gcc
+CC = g++
 CFLAGS = -Wno-error -O3 -ldl -lstdc++
 
 #================================================================================
 
-SRCS    = ./Main.cpp
+SRCS    = ./EUSignUsage.cpp
 SRCS    += ./Interface/EUSignCP.cpp
 
 #================================================================================
@@ -17,7 +17,7 @@ INCLUDES   += ./Interface
 
 OBJS = $(SRCS:.c=.o)
 
-MAIN = euscsigntest
+MAIN = EUSignUsage
 
 .PHONY: clean
 
