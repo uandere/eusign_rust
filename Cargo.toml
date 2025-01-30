@@ -2,7 +2,7 @@
 name = "EUSignCP-Linux-20250102"
 version = "0.1.0"
 edition = "2021"
-author = "Nazar Demchuk | CEO and founder of KAZE"
+author = "Nazar Demchuk"
 
 
 [dependencies]
