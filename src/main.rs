@@ -8,11 +8,7 @@ pub mod helpers;
 
 use helpers::*;
 use std::ffi::{c_char, c_int, c_uchar, c_ulong, c_void, CStr, CString};
-use std::fs::{File, OpenOptions};
-use std::io::{Read, Write};
-use std::mem;
 use std::ptr;
-use std::slice;
 
 // Bring in all the bindgen-generated FFI:
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
@@ -293,7 +289,7 @@ fn write_all_text(file_path: &str, data: &str) {
 // The "Initialize()" logic from your example. We replicate it in Rust.
 ///////////////////////////////////////////////////////////////////////////////
 unsafe fn Initialize() -> c_ulong {
-    let mut dwError: c_ulong = 0;
+    let mut dwError: c_ulong;
 
     // If we are using the function-pointer interface, do:
     let set_ui_mode = (*G_P_IFACE).SetUIMode.unwrap();
@@ -316,12 +312,13 @@ unsafe fn Initialize() -> c_ulong {
     let nSign = EU_SIGN_TYPE_CADES_T;
 
     set_runtime_parameter(
-        EU_SAVE_SETTINGS_PARAMETER.as_ptr() as *mut i8,
+        EU_SAVE_SETTINGS_PARAMETER.as_ptr() as *mut c_char,
         &nSaveSettings as *const _ as *mut c_void,
         EU_SAVE_SETTINGS_PARAMETER_LENGTH.into(),
     );
+
     set_runtime_parameter(
-        EU_SIGN_TYPE_PARAMETER.as_ptr() as *mut i8,
+        EU_SIGN_TYPE_PARAMETER.as_ptr() as *mut c_char,
         &nSign as *const _ as *mut c_void,
         EU_SIGN_TYPE_LENGTH.into(),
     );
@@ -637,7 +634,7 @@ fn main() {
         G_P_IFACE = p_iface;
 
         // We'll track error codes
-        let mut dwError: c_ulong = 0;
+        
 
         // Prepare output pointers
         let mut pbCustomerData: *mut c_uchar = ptr::null_mut();
@@ -710,7 +707,7 @@ fn main() {
         };
 
         // 3) Decrypt / develop the customer crypto
-        dwError = DevelopCustomerCrypto(
+        let dwError: c_ulong = DevelopCustomerCrypto(
             PRIVATE_KEY_FILE_PATH,
             PRIVATE_KEY_PASSWORD,
             G_SZ_SENDER_CERT,

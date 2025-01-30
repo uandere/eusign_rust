@@ -641,13 +641,11 @@ pub static mut s_Iface: EU_INTERFACE = EU_INTERFACE {
         Some(EUDevCtxInternalAuthenticateIDCard),
 };
 
-#[no_mangle]
-pub unsafe extern "C" fn EULoad() -> c_int {
-    // If you want to call EUInitialize automatically:
+/// # Safety
+pub unsafe fn EULoad() -> c_int {
     let ret = EUInitialize();
     // In the C code, success was "1" if loaded, "0" if not.
     // EUInitialize returns 0 if success, or an error code if not. 
-    // So invert that logic if needed:
     if ret == 0 {
         1
     } else {
@@ -655,15 +653,13 @@ pub unsafe extern "C" fn EULoad() -> c_int {
     }
 }
 
-#[no_mangle]
-pub unsafe extern "C" fn EUGetInterface() -> *const EU_INTERFACE {
+/// # Safety
+pub unsafe fn EUGetInterface() -> *const EU_INTERFACE {
     // Return pointer to our static s_Iface
-    &s_Iface
+    &raw const s_Iface
 }
 
-#[no_mangle]
-pub unsafe extern "C" fn EUUnload() {
-    // If you want to automatically finalize:
+/// # Safety
+pub unsafe fn EUUnload() {
     EUFinalize();
-    // We do *not* do dlclose or anything, since this is statically linked
 }

@@ -3,7 +3,7 @@ use std::path::PathBuf;
 
 fn main() {
     // 1) Tell Cargo where to find the library at link time
-    println!("cargo:rustc-link-search=native=/home/ubuntu/EUSignCP-Linux-20250102/Modules");
+    println!("cargo:rustc-link-search=native=./Modules");
     
     // 2) Tell Cargo which library to link (normally searches for `libeuscp.so`)
     //    If your file is literally named `euscp.so`, rename it to `libeuscp.so`
