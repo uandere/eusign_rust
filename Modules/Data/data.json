@@ -1,1 +1,43 @@
-{"requestId":"blahblahblah6","documentTypes":["taxpayer-card","internal-passport"],"data":{"taxpayer-card":[{"creationDate":"28.01.2025","docNumber":"1234567001","lastNameUA":"Дія","firstNameUA":"Надія","middleNameUA":"Володимирівна","birthday":"17.01.1997","fileName":"taxpayer-card-547d4132-9e2a-4a2f-812b-ba6c19dc84fd-28.01.2025, 17:22:33-1.pdf.p7s.p7e"}],"internal-passport":[{"taxpayerNumber":"1234567001","residenceUA":"УКРАЇНА М. КИЇВ ВУЛ. ХМЕЛЬНИЦЬКОГО БОГДАНА БУД. 10 КВ. 43.\nДата реєстрації: 29.06.2006","docNumber":"002307001","genderUA":"Ж","nationalityUA":"Україна","lastNameUA":"Дія","firstNameUA":"Надія","middleNameUA":"Володимирівна","birthday":"17.01.1997","birthPlaceUA":"СМТ. ЮР'ЇВКА ЮР'ЇВСЬКИЙ РАЙОН ДНІПРОПЕТРОВСЬКА  ОБЛАСТЬ УКРАЇНА","issueDate":"12.09.2018","expirationDate":"12.09.2028","recordNumber":"19970117-70010","department":"1263","genderEN":"F","id":"19970117-70010-2018-09-12","lastNameEN":"Diia","firstNameEN":"Nadia","fileName":"internal-passport-547d4132-9e2a-4a2f-812b-ba6c19dc84fd-28.01.2025, 17:22:33-1.pdf.p7s.p7e"}]}}
+{
+    "requestId": "blahblahblah6",
+    "documentTypes": [
+        "taxpayer-card",
+        "internal-passport"
+    ],
+    "data": {
+        "taxpayer-card": [
+            {
+                "creationDate": "28.01.2025",
+                "docNumber": "1234567001",
+                "lastNameUA": "Дія",
+                "firstNameUA": "Надія",
+                "middleNameUA": "Володимирівна",
+                "birthday": "17.01.1997",
+                "fileName": "taxpayer-card-547d4132-9e2a-4a2f-812b-ba6c19dc84fd-28.01.2025, 17:22:33-1.pdf.p7s.p7e"
+            }
+        ],
+        "internal-passport": [
+            {
+                "taxpayerNumber": "1234567001",
+                "residenceUA": "УКРАЇНА М. КИЇВ ВУЛ. ХМЕЛЬНИЦЬКОГО БОГДАНА БУД. 10 КВ. 43.\nДата реєстрації: 29.06.2006",
+                "docNumber": "002307001",
+                "genderUA": "Ж",
+                "nationalityUA": "Україна",
+                "lastNameUA": "Дія",
+                "firstNameUA": "Надія",
+                "middleNameUA": "Володимирівна",
+                "birthday": "17.01.1997",
+                "birthPlaceUA": "СМТ. ЮР'ЇВКА ЮР'ЇВСЬКИЙ РАЙОН ДНІПРОПЕТРОВСЬКА  ОБЛАСТЬ УКРАЇНА",
+                "issueDate": "12.09.2018",
+                "expirationDate": "12.09.2028",
+                "recordNumber": "19970117-70010",
+                "department": "1263",
+                "genderEN": "F",
+                "id": "19970117-70010-2018-09-12",
+                "lastNameEN": "Diia",
+                "firstNameEN": "Nadia",
+                "fileName": "internal-passport-547d4132-9e2a-4a2f-812b-ba6c19dc84fd-28.01.2025, 17:22:33-1.pdf.p7s.p7e"
+            }
+        ]
+    }
+}
